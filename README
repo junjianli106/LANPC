@@ -1,0 +1,59 @@
+# Deep Learning Radiopathomic Model for Locally Advanced Nasopharyngeal Carcinoma
+
+This repository contains the code and resources for the project titled **Deep Learning Radiopathomic Model Based on Pretreatment MRI and Whole Slide Images for Predicting Overall Survival in Locally Advanced Nasopharyngeal Carcinoma**. The project focuses on developing a multimodal fusion model for prognosis prediction using Whole Slide Imaging (WSI) and Magnetic Resonance Imaging (MRI) data. The repository is structured to ensure transparency, reproducibility, and ease of use.
+
+---
+
+## **Key Features**
+1. **Pretrained Model**
+   - We used a ResNet-50 model pretrained on ImageNet (PyTorch implementation).
+   - The model weights and implementation details are publicly available at [Hugging Face](https://huggingface.co/microsoft/resnet-50).
+
+2. **Multimodal Fusion**
+   - The fusion module concatenates WSI and MRI embeddings, followed by a fully connected layer with ReLU activation.
+
+3. **Prognosis Definition**
+   - The model employs a Cox proportional hazards layer to handle survival data directly.
+   - Risk scores were dichotomized at the median to stratify patients into high-risk and low-risk groups.
+
+---
+
+## **Repository Structure**
+```
+project_repository/
+├── datasets/               # Datasets
+├── models/                 # Pretrained models and custom architecture implementations
+├── splits/                 # Predefined data splits for training, validation
+├── train.py                # Main script for training the model
+├── README.md               # This file
+└── requirements.txt        # List of dependencies
+```
+
+---
+
+## **Usage Instructions**
+1. **Install Dependencies**
+   Install the required dependencies using the following command:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Preprocessing**
+   - For pathology data, we use CLAM to extract features and apply stain normalization.
+   - For MRI data, we use Pyradiomics to extract features.
+
+3. **Training**
+   Train the model using the provided training script:
+   ```bash
+   python train.py --stage='train' --config='HPCH/LANPC.yaml' --gpus=0
+   ```
+
+---
+
+## **License**
+This project is licensed under the **[License Name]** License. See the `LICENSE` file for details.
+
+
+We hope this repository will aid in reproducing our results and further research in this field. Thank you for your interest in our work!
+
+: [ResNet-50 Model on Hugging Face](https://huggingface.co/microsoft/resnet-50)

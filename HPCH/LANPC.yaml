@@ -1,0 +1,49 @@
+General:
+    comment: HPCH AMIL
+    seed: 2024
+    fp16: False
+    amp_level: O2
+    precision: 32 # 
+    multi_gpu_mode: dp
+    gpus: [0]
+    epochs: &epoch 100 #
+    grad_acc: 2
+    frozen_bn: False
+    patience: 40
+    server: test #train #test
+    log_path: ./logs/
+
+Data:
+    dataset_name: hpch_data
+    data_shuffle: False #False
+    label_name: OS # OS PFS
+    data_dir: /homed/data/HPCH/feats-l1-s256-RN50-color_norm/pt_files//
+    label_dir: splits/HPCH/
+    fold: 1
+    nfold: 4
+    n_bins: 4
+
+    train_dataloader:
+        batch_size: 1
+        num_workers: 8
+
+    test_dataloader:
+        batch_size: 1
+        num_workers: 8
+
+Model:
+    name: LANPC
+    n_classes: 4
+    gate: True
+
+
+Optimizer:
+    opt: lookahead_radam
+    lr: 0.0002
+    opt_eps: null #
+    opt_betas: null
+    momentum: null #0.9
+    weight_decay: 0.00001
+
+Loss:
+    alpha_surv: 0.0 #How much to weigh uncensored patients
