@@ -1,8 +1,6 @@
-
 # Deep Learning Radiopathomic Model for Locally Advanced Nasopharyngeal Carcinoma
 
 This repository contains the code and resources for the project titled **Deep Learning Radiopathomic Model Based on Pretreatment MRI and Whole Slide Images for Predicting Overall Survival in Locally Advanced Nasopharyngeal Carcinoma**. The project focuses on developing a multimodal fusion model for prognosis prediction using Whole Slide Imaging (WSI) and Magnetic Resonance Imaging (MRI) data. The repository is structured to ensure transparency, reproducibility, and ease of use.
-
 
 ## **Key Features**
 1. **Pretrained Model**  
@@ -10,7 +8,7 @@ This repository contains the code and resources for the project titled **Deep Le
    - The model weights and implementation details are publicly available at [Hugging Face](https://huggingface.co/microsoft/resnet-50).  
 
 2. **Multimodal Fusion**  
-   - The fusion module concatenates WSI and MRI embeddings, followed by a fully connected layer with ReLU activation.  
+   - a multimodal feature fusion module integrated the WSI-level and MRI-level features. To achieve this, we first concatenated the WSI-level and MRI-level features, combining the strengths of both modalities. We then employed an MLP network to learn the interactions between these two types of features, enabling the model to leverage the complementary information from WSIs and MRI.
 
 3. **Prognosis Definition**  
    - The model employs a Cox proportional hazards layer to handle survival data directly.  
@@ -27,7 +25,6 @@ project_repository/
 ├── README.md               # This file
 └── requirements.txt        # List of dependencies
 ```
-
 
 ## **Usage Instructions**
 1. **Install Dependencies**  
