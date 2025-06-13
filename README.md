@@ -1,6 +1,6 @@
 # Deep Learning Radiopathomic Model for Locally Advanced Nasopharyngeal Carcinoma
 
-This repository contains the code and resources for the project titled Deep Learning Radiopathomic Model Based on Pretreatment MRI and Whole Slide Images for Predicting Overall Survival in Locally Advanced Nasopharyngeal Carcinoma. The project focuses on developing a multimodal fusion model for prognosis prediction using Whole Slide Imaging (WSI) and Magnetic Resonance Imaging (MRI) data. The repository is structured to ensure transparency, reproducibility, and ease of use.
+This repository contains the code and resources for the project titled **Deep Learning Radiopathomic Model Based on Pretreatment MRI and Whole Slide Images for Predicting Overall Survival in Locally Advanced Nasopharyngeal Carcinoma**. The project focuses on developing a multimodal fusion model for prognosis prediction using Whole Slide Imaging (WSI) and Magnetic Resonance Imaging (MRI) data. 
 
 ## Key Features
 1. Pretrained Model  
